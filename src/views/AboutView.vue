@@ -27,7 +27,7 @@
 
     <!-- Resume Section -->
     <h2 style="margin-top:30px;">📄 Resume</h2>
-    <a href="/Nidhi_Resume.pdf" download>
+    <a href="/NidhiSingh-Resume.pdf" download>
       <button class="btn">Download Resume</button>
     </a>
 
