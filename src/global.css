@@ -13,10 +13,24 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: "Inter", sans-serif;
+  width: 100%;
+}
+
+/* Main app wrapper */
+#app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Utility classes */
@@ -25,7 +39,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 
 .card {
   background: var(--card-bg);
@@ -42,9 +55,17 @@ body {
   border: none;
   cursor: pointer;
   font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
 }
+
 .btn:hover {
   opacity: 0.8;
+}
+
+.btn:active {
+  transform: scale(0.94);
+  transition: 0.1s;
 }
 
 .text-big {
@@ -56,11 +77,18 @@ body {
   font-size: 15px;
   opacity: 0.8;
 }
-.btn:active {
-  transform: scale(0.94);
-  transition: 0.1s;
+
+/* ========== THEME COLORS ========== */
+body.dark {
+  background: #0e0e0e;
+  color: white;
 }
-/* ========== TEXT VISIBILITY FIX ========== */
+
+body.light {
+  background: #f3f3f3;
+  color: black;
+}
+
 body.dark .card {
   background: #1a1a1a;
   color: white;
@@ -71,7 +99,6 @@ body.light .card {
   color: black;
 }
 
-/* Improve user list bullet color */
 body.light li {
   color: black;
 }
@@ -80,7 +107,6 @@ body.dark li {
   color: white;
 }
 
-/* Skill card colors depending on theme */
 body.dark .skill {
   background: #1a1a1a;
   color: white;
@@ -91,12 +117,13 @@ body.light .skill {
   color: black;
   box-shadow: 0 0 6px rgba(0,0,0,0.15);
 }
+
 .skill:hover {
   transform: translateY(-4px);
   transition: 0.2s;
   cursor: pointer;
 }
-/* Project Cards Theme Support */
+
 body.dark .project-card {
   background: #0f0f0f;
   color: white;
@@ -108,6 +135,7 @@ body.light .project-card {
   color: black;
   box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
+
 body.dark .btn {
   background: #00eaff;
   color: black;
@@ -117,7 +145,35 @@ body.light .btn {
   background: #111;
   color: white;
 }
+
 body.light .tag {
   background: #e9e9e9;
   color: #333;
+}
+
+/* ========== RESPONSIVE CONTAINER ========== */
+.page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px 15px;
+  }
+  
+  .text-big {
+    font-size: 24px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1400px) {
+  .page-container {
+    max-width: 1400px;
+  }
 }
